@@ -22,13 +22,13 @@ const PostsContainer = () => {
     );
   }
   return (
-    <Container>
+    <div style={{ marginLeft: 60 }}>
       <Row>
         {posts.map((post) => (
           <PostsComponent key={post.id} {...post} size={"22rem"} />
         ))}
       </Row>
-    </Container>
+    </div>
   );
 };
 
