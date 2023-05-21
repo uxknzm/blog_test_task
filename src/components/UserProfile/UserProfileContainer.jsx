@@ -13,18 +13,14 @@ const UserProfileContainer = () => {
   const { id } = useParams();
   const filterArray = posts && posts.filter((post) => post.post.userId === Number(id));
   const user = posts && posts.find((post) => post.user.id === Number(id));
-  const mount = useRef();
 
   useEffect(() => {
-    // во время первого маунта не делаем запрос, потом смотрим если есть стейте, то мы не отправляем запрос на сервер 
-    if (!mount.current) {
-      mount.current = true;
-    } else {
-      if (!posts.length) {
-        dispatch(fetchPosts());
-      };
+    // смотрим если есть стейте, то мы не отправляем запрос на сервер 
+    if (!posts.length) {
+      console.log("123");
+      dispatch(fetchPosts());
     };
-  }, [posts]);
+  }, []);
 
   if (!filterArray || !filterArray.length) {
     return (
