@@ -16,7 +16,7 @@ const CommentsContainer = ({ postId }) => {
   return (
     <ListGroup style={{ maxHeight: "250px", overflowX: "auto" }}>
       {comments[postId].map((comment) => {
-        return <CommentsComponent {...comment} />;
+        return <CommentsComponent key={comment.id} {...comment} />;
       })}
     </ListGroup>
   );

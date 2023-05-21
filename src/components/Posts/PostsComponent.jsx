@@ -3,14 +3,14 @@ import { Button, ButtonGroup, Card, Col } from "react-bootstrap";
 import CommentsContainer from "../Comments/CommentsContainer";
 import { Link } from "react-router-dom";
 
-const PostsComponent = ({ post, photo, user }) => {
+const PostsComponent = ({ post, photo, user, size = "22rem", key }) => {
   const [visibleComments, setVisibleComments] = useState(false);
   const onClick = () => {
     setVisibleComments(!visibleComments);
   };
   return (
     <Col style={{ marginTop: 20 }}>
-      <Card key={post.id} style={{ width: "22rem" }}>
+      <Card key={key} style={{ width: size }}>
         <Link to={`/user/${user.id}`}>
           <Card.Img variant="top" src={photo.url} />
         </Link>

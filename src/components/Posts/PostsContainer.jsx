@@ -18,7 +18,7 @@ const PostsContainer = () => {
     <Container>
       <Row>
         {posts.map((post) => (
-          <PostsComponent {...post} />
+          <PostsComponent key={post.id} {...post} size={"22rem"} />
         ))}
       </Row>
     </Container>
