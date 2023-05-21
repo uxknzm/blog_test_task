@@ -3,16 +3,22 @@ import { ListGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchComments } from "../../redux/commentsReducer";
 import CommentsComponent from "./CommentsComponent";
+import Loader from "../Loader/Loader";
 
 const CommentsContainer = ({ postId }) => {
   const dispatch = useDispatch();
   const { comments } = useSelector((state) => state.comments);
   useEffect(() => {
     dispatch(fetchComments(postId));
+    /* таск сделать когда размаутилась компонета удалить из стейта */
   }, []);
   if (!comments[postId]) {
-    return null;
-  };
+    return (
+      <ListGroup style={{ maxHeight: "250px", overflowX: "auto" }}>
+        <Loader />
+      </ListGroup>
+    );
+  }
   return (
     <ListGroup style={{ maxHeight: "250px", overflowX: "auto" }}>
       {comments[postId].map((comment) => {

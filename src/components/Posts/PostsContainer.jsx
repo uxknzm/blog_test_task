@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { fetchPosts } from "../../redux/postsReducer";
 import PostsComponent from "./PostsComponent";
+import Loader from "../Loader/Loader";
 
 const PostsContainer = () => {
   const dispatch = useDispatch();
@@ -11,8 +12,14 @@ const PostsContainer = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, []);
-  if (!posts) {
-    return null
+  if (!posts || !posts.length) {
+    return (
+      <Container>
+        <Row>
+          <Loader />
+        </Row>
+      </Container>
+    );
   };
   return (
     <Container>

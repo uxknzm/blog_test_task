@@ -4,6 +4,8 @@ import { useParams } from "react-router";
 
 import UserProfileComponent from "./UserProfileComponent";
 import { fetchPosts } from "../../redux/postsReducer";
+import { Container } from "react-bootstrap";
+import Loader from "../Loader/Loader";
 
 const UserProfileContainer = () => {
   const dispatch = useDispatch();
@@ -23,6 +25,14 @@ const UserProfileContainer = () => {
       };
     };
   }, [posts]);
+
+  if (!filterArray || !filterArray.length) {
+    return (
+      <Container>
+          <Loader />
+      </Container>
+    );
+  };
 
   return <UserProfileComponent posts={filterArray} { ...user?.user } avatar="https://buzookod.ru/media/2816616767_vubrbeJ.jpg" />;
 };

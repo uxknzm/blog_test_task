@@ -1,8 +1,8 @@
 import React from "react";
-
-import AboutMeContainer from "../components/AboutMeContainer/AboutMeContainer";
 import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import AboutMeContainer from "../components/AboutMeContainer/AboutMeContainer";
 
 const AboutMePage = () => {
   return (
