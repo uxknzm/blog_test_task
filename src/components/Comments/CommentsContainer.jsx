@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchComments } from "../../redux/commentsReducer";
+import { fetchComments, removeComments } from "../../redux/commentsReducer";
 import CommentsComponent from "./CommentsComponent";
 import Loader from "../Loader/Loader";
 
@@ -11,6 +11,9 @@ const CommentsContainer = ({ postId }) => {
   useEffect(() => {
     dispatch(fetchComments(postId));
     /* таск сделать когда размаутилась компонета удалить из стейта */
+    return () => {
+      dispatch(removeComments(postId));
+    };
   }, []);
   if (!comments[postId]) {
     return (

@@ -12,5 +12,5 @@ export const postsReducer = (state = initialState, action) => {
     }
 };
 
-export const setPosts = payload => ({type: SET_POSTS, payload})
+export const setPosts = (payload) => ({type: SET_POSTS, payload})
 export const fetchPosts = () => ({ type: FETCH_POST })
