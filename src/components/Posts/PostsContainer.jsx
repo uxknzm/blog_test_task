@@ -20,7 +20,7 @@ const PostsContainer = () => {
         </Row>
       </Container>
     );
-  };
+  }
   return (
     <Container>
       <Row>
