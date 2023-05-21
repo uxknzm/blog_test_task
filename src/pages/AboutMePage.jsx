@@ -10,8 +10,9 @@ const AboutMePage = () => {
       <div class="main-body">
         <Breadcrumb>
           <Breadcrumb.Item>
-            <Link to="/">Back</Link>
+            <Link to="/">Posts</Link>
           </Breadcrumb.Item>
+          <Breadcrumb.Item active>Profile</Breadcrumb.Item>
         </Breadcrumb>
         <AboutMeContainer />
       </div>
