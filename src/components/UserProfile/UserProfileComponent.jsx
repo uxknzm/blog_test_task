@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, ListGroup } from "react-bootstrap";
-
-import PostsComponent from "../Posts/PostsComponent";
 import _ from "lodash";
 
+import PostsComponent from "../Posts/PostsComponent";
+
 const UserProfileComponent = ({
-  posts,
-  address,
-  company,
+  posts = [],
+  address = {},
+  company = {},
   email,
   name,
   phone,
@@ -29,7 +29,7 @@ const UserProfileComponent = ({
           <ListGroup>
             <ListGroup.Item>{`phone: ${phone}`}</ListGroup.Item>
             <ListGroup.Item>{`username: ${username}`}</ListGroup.Item>
-            <ListGroup.Item>{`website: ${website}`}</ListGroup.Item>
+            <ListGroup.Item>website: <a target="_blank" href={website}>{website}</a></ListGroup.Item>
           </ListGroup>
         </div>
       </div>
