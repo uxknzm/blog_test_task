@@ -50,7 +50,7 @@ const UserProfileComponent = ({
           })}
         </ListGroup>
         {posts.map((post) => (
-          <PostsComponent key={post.id} {...post} size={"100%"} />
+          <PostsComponent key={post.id} {...post} avatar="https://buzookod.ru/media/2816616767_vubrbeJ.jpg" size={"100%"} />
         ))}
       </div>
     </div>

@@ -17,7 +17,6 @@ const UserProfileContainer = () => {
   useEffect(() => {
     // смотрим если есть стейте, то мы не отправляем запрос на сервер 
     if (!posts.length) {
-      console.log("123");
       dispatch(fetchPosts());
     };
   }, []);
